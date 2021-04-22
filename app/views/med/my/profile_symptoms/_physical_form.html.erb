@@ -1,0 +1,12 @@
+<%= form_with theme: 'weui', model: @profile_symptom, url: { action: 'value' }, id: 'edit_symptom' do |f| %>
+  <%= render 'shared/error_messages', target: @profile_symptom %>
+  <div class="weui-form__control-area">
+    <div class="weui-cells__group weui-cells__group_form">
+      <div class="weui-cells__title">填写</div>
+      <div class="weui-cells weui-cells_form">
+        <%= f.hidden_field :symptom_id %>
+        <%= f.text_field :value, label: @profile_symptom.symptom.name %>
+      </div>
+    </div>
+  </div>
+<% end %>

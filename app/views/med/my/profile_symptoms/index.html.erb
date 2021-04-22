@@ -1,0 +1,32 @@
+<%= render 'filter_form' %>
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>
+        <%= link_to new_mine_profile_symptom_path, remote: true, class: 'button is-link is-small' do %>
+          <i class="fas fa-plus"></i><%= t('.new') %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @profile_symptoms.each do |profile_symptom| %>
+    <tr>
+      <td>
+        <%= link_to mine_profile_symptom_path(profile_symptom), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+        <%= link_to edit_mine_profile_symptom_path(profile_symptom), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to mine_profile_symptom_path(profile_symptom), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @profile_symptoms %>

@@ -1,0 +1,3 @@
+<%= form_with model: @symptom_diagnose, url: panel_symptom_diagnose_path(@symptom, @symptom_diagnose) do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+<% end %>

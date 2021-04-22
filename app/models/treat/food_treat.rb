@@ -1,0 +1,3 @@
+class FoodTreat < Treat
+
+end

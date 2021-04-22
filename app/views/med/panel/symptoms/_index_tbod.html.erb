@@ -1,0 +1,66 @@
+<tr>
+  <td><%= link_to symptom.name, panel_symptom_path(symptom), text: true %></td>
+  <td>
+    <p><%= symptom.type_i18n %></p>
+    <p><%= symptom.bodily_i18n %></p>
+  </td>
+  <td>
+    <div class="tags">
+    <% symptom.bodies.each do |body| %>
+      <span class="tag"><%= body.name %></span>
+    <% end %>
+    </div>
+    <%= link_to bodies_panel_symptom_path(symptom), aria: { label: t('.bodies') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-child"></i>
+    <% end unless symptom.whole? %>
+  </td>
+  <td>
+    <% if symptom.diagnose %>
+      <span><%= symptom.diagnose.name %></span>
+      <%= link_to panel_symptom_diagnoses_path(symptom), aria: { label: t('med.panel.symptom_diagnoses.index.title') } do %>
+        <i class="fas fa-microscope"></i>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <div class="tags">
+      <% symptom.causes.each do |cause| %>
+        <span class="tag"><%= cause.name %></span>
+      <% end %>
+    </div>
+    <%= link_to causes_panel_symptom_path(symptom), aria: { label: t('.causes') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-viruses"></i>
+    <% end %>
+  </td>
+  <td>
+    <div data-controller="input">
+      <%= check_box_tag '[symptom]mutable', nil, symptom.mutable, data: { method: :patch, remote: true, url: panel_symptom_path(symptom), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+      <label></label>
+    </div>
+  </td>
+  <td>
+    <div data-controller="input">
+      <%= check_box_tag '[symptom]primary', nil, symptom.primary, data: { method: :patch, remote: true, url: panel_symptom_path(symptom), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+      <label></label>
+    </div>
+    <div data-controller="input">
+      <%= check_box_tag '[symptom]physical', nil, symptom.physical, data: { method: :patch, remote: true, url: panel_symptom_path(symptom), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+      <label><%= symptom.physical_i18n %></label>
+    </div>
+  </td>
+  <td><%= symptom.sequence %></td>
+  <td>
+    <%= link_to knowable_my_knowledges_path('Symptom', symptom), aria: { label: '知识' }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-book-medical"></i>
+    <% end %>
+    <%= link_to panel_symptom_path(symptom), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-eye"></i>
+    <% end %>
+    <%= link_to edit_panel_symptom_path(symptom), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+    <%= link_to panel_symptom_path(symptom), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </td>
+</tr>

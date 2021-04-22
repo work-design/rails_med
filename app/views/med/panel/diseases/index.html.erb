@@ -1,0 +1,45 @@
+<%= render 'filter_form' %>
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= Disease.human_attribute_name(:name) %></th>
+      <th><%= Disease.human_attribute_name(:symptoms) %></th>
+      <th>
+        <%= link_to new_panel_disease_path, remote: true, class: 'button is-link is-small' do %>
+          <i class="fas fa-plus"></i><%= t('.new') %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @diseases.each do |disease| %>
+    <tr>
+      <td><%= disease.name %></td>
+      <td>
+        <div class="tags">
+        <% disease.symptoms.each do |symptom| %>
+          <div class="tag"><%= symptom.name %></div>
+        <% end %>
+        </div>
+      </td>
+      <td>
+        <%= link_to knowable_my_knowledges_path('Disease', disease), aria: { label: '知识' }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-book-medical"></i>
+        <% end %>
+        <%= link_to panel_disease_path(disease), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+        <%= link_to edit_panel_disease_path(disease), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to panel_disease_path(disease), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @diseases %>

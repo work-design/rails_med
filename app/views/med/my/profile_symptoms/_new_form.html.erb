@@ -1,0 +1,8 @@
+<%= form_with url: { action: 'create' }, id: 'edit_symptom' do |f| %>
+<% end %>
+<% @symptoms.each do |symptom| %>
+  <label class="weui-btn weui-btn_mini <%= @profile.symptom_ids.include?(symptom.id) ? 'weui-btn_primary' : 'weui-btn_default' %>" for="symptom_<%= symptom.id %>">
+    <span><%= symptom.name %></span>
+    <%= check_box_tag 'profile[symptom_ids][]', symptom.id, @profile.symptom_ids.include?(symptom.id), data: { action: 'symptom#toggle' }, class: 'weui-check', id: "symptom_#{symptom.id}", form: 'edit_symptom' %>
+  </label>
+<% end %>

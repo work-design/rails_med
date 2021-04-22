@@ -1,0 +1,4 @@
+<%= form_with scope: :symptom, model: @symptom, url: panel_symptom_path(@symptom) do |f| %>
+  <%= f.collection_select :cause_ids, @causes, :id, :name, { wrap: { select: 'field-body control' } }, { multiple: true, data: { controller: 'choice' } } %>
+  <%= f.submit %>
+<% end %>

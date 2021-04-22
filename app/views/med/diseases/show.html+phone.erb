@@ -1,0 +1,26 @@
+<section class="box">
+  <h1 class="title"><%= @disease.name %></h1>
+</section>
+
+<% if @disease.knowledge %>
+<section class="box">
+  <%= @disease.knowledge.body %>
+</section>
+<% end %>
+
+<section class="box">
+  <h2 class="subtitle">症状</h2>
+  <div class="content">
+    <ul>
+    <% @disease.symptoms.each do |symptom| %>
+      <li>
+        <% if symptom.knowledge %>
+          <%= link_to symptom.name, knowledge_path(symptom.knowledge) %>
+        <% else %>
+          <%= symptom.name %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</section>

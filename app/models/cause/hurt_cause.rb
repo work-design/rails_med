@@ -1,0 +1,3 @@
+class HurtCause < Cause
+
+end

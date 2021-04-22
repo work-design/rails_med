@@ -1,0 +1,18 @@
+<%= render layout: 'modal' do %>
+  <div class="panel">
+    <div class="panel-heading">擅长疾病</div>
+    <div class="panel-block" id="search-content">
+      <%= form_with theme: nil, scope: nil, url: search_diseases_admin_member_path(@member), method: :get, html: { style: 'width: 100%;' } do |f| %>
+        <div class="control has-icons-left">
+          <%= f.search_field 'name-like', class: 'input', placeholder: '搜索', data: { controller: 'typer' } %>
+          <span class="icon is-left"><i class="fas fa-search"></i></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-block" id="disease_content">
+    <% @diseases.each do |disease| %>
+      <%= render partial: 'disease', locals: { disease: disease } %>
+    <% end %>
+    </div>
+  </div>
+<% end %>

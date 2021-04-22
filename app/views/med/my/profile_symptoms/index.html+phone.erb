@@ -1,0 +1,23 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__bd">
+  <% @profile.as_json(only: [:real_name, :nick_name, :gender, :birthday_type, :birthday], methods: [:age]).each do |key, value| %>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(key) %></label>
+      <span class="weui-form-preview__value"><%= value %></span>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="weui-form-preview">
+  <div class="weui-form-preview__bd">
+  <% @profile.profile_symptoms.each do |profile_symptom| %>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= profile_symptom.symptom_name %></label>
+      <span class="weui-form-preview__value"><%= profile_symptom.value %></span>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<%= render 'dialog' %>

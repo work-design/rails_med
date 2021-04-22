@@ -1,0 +1,7 @@
+<td><%= model.name %></td>
+<td><%= image_tag model.image, class: 'image is-32x32' if model.image.attached? %></td>
+<td>
+  <% model.images.each do |image| %>
+    <%= image_tag image, class: 'image is-32x32' %>
+  <% end %>
+</td>

@@ -1,0 +1,30 @@
+<tr>
+  <td class="has-text-right"><%= Symptom.human_attribute_name(:name) %></td>
+  <td><%= @symptom.name %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Symptom.human_attribute_name(:type) %></td>
+  <td><%= @symptom.type %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Symptom.human_attribute_name(:mutable) %></td>
+  <td>
+    <div data-controller="input">
+      <%= check_box_tag '[symptom]mutable', nil, @symptom.mutable, data: { method: :patch, remote: true, url: panel_symptom_path(@symptom), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+      <label></label>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Symptom.human_attribute_name(:primary) %></td>
+  <td>
+    <div data-controller="input">
+      <%= check_box_tag '[symptom]primary', nil, @symptom.primary, data: { method: :patch, remote: true, url: panel_symptom_path(@symptom), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+      <label></label>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Symptom.human_attribute_name(:content) %></td>
+  <td><%= @symptom.content %></td>
+</tr>

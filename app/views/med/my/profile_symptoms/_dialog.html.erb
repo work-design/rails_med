@@ -1,0 +1,25 @@
+<div style="opacity: 1" data-controller="weui-dialog symptom" data-symptom-range="1" data-symptom-order="<%= @profile.symptom_ids.join(',') %>">
+  <div class="weui-half-screen-dialog weui-half-screen-dialog_show" data-weui-dialog-target="dialog">
+    <div class="weui-half-screen-dialog__hd">
+      <div class="weui-half-screen-dialog__hd__side">
+        <button class="weui-btn weui-btn_mini weui-btn_warn">返回</button>
+      </div>
+      <div class="weui-half-screen-dialog__hd__main">
+        <div class="weui-half-screen-dialog__title">选择</div>
+      </div>
+      <div class="weui-half-screen-dialog__hd__side">
+        <%= submit_tag '下一步', class: 'weui-btn weui-btn_mini weui-btn_primary', form: 'edit_symptom' %>
+      </div>
+    </div>
+    <div class="weui-half-screen-dialog__bd">
+      <% if @profile_symptom&.symptom %>
+        <%= render 'physical_form' %>
+      <% else %>
+        <%= render 'form' %>
+      <% end %>
+    </div>
+    <div class="weui-half-screen-dialog__ft">
+      <button class="weui-btn weui-btn_mini weui-btn_primary" data-controller="wechat" data-action="wechat#close">转人工咨询</button>
+    </div>
+  </div>
+</div>

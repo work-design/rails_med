@@ -1,0 +1,38 @@
+<% content_for :breadcrumb do %>
+  <ul>
+    <li><%= link_to t('med.panel.symptoms.index.title'), panel_symptoms_path %></li>
+    <li><%= @symptom.name %></li>
+  </ul>
+<% end %>
+
+<%= render 'filter_form' %>
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= SymptomDiagnose.human_attribute_name(:value) %></th>
+      <th>
+        <%= link_to new_panel_symptom_diagnose_path, remote: true, class: 'button is-link is-small' do %>
+          <i class="fas fa-plus"></i><%= t('.new') %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @symptom_diagnoses.each do |symptom_diagnose| %>
+    <tr>
+      <td><%= symptom_diagnose.value %></td>
+      <td>
+        <%= link_to edit_panel_symptom_diagnose_path(@symptom, symptom_diagnose), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to panel_symptom_diagnose_path(@symptom, symptom_diagnose), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @symptom_diagnoses %>
