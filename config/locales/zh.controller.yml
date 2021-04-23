@@ -1,0 +1,31 @@
+zh:
+  med:
+    panel:
+      title: 医学管理
+      bodies:
+        index:
+          title: 身体部位
+      causes:
+        index:
+          title: 病因
+      diagnoses:
+        index:
+          title: 诊断
+      diseases:
+        index:
+          title: 疾病
+      symptoms:
+        index:
+          title: 症状
+          bodies: 身体部位
+          causes: 病因
+        bodies:
+          title: 身体部位
+        causes:
+          title: 病因
+      symptom_diagnoses:
+        index:
+          title: 症状性状
+      treats:
+        index:
+          title: 治疗

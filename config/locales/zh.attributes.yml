@@ -1,0 +1,11 @@
+zh:
+  activerecord:
+    attributes:
+      med/diagnose:
+        actor: 形式
+      med/symptom:
+        bodily: 身体部位
+        mutable: 变化的
+        primary: 主要症状
+        diagnose_id: 诊断方法
+        sequence: 序列

@@ -1,0 +1,37 @@
+zh:
+  activerecord:
+    enum:
+      med/agency:
+        relation:
+          unknown: 未知
+          son: 子女
+          father: 父亲
+      med/diagnose:
+        actor:
+          oneself: 患者自觉
+          doctor: 医生检查
+          subjective: 主观察觉
+          objective: 客观/仪器
+      med/cause:
+        type:
+          HurtCause: 受伤
+          PathogenCause: 病原体
+          ChronicCause: 慢性积累
+      med/symptom:
+        type:
+          BooleanSymptom: 阴性/阳性
+          MeasureSymptom: 可测量
+          OptionSymptom: 选项
+          TimeSymptom: 持续时间
+        bodily:
+          whole: 全身性
+          special: 特定部位
+          multiple: 多部位
+        physical:
+          true: 生理性的
+          false: 病理性的
+      med/treat:
+        type:
+          FoodTreat: 食疗
+          MedicineTreat: 药物治疗
+          SportTreat: 运动疗法
