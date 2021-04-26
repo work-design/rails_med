@@ -1,9 +1,16 @@
-class SymptomDiagnose < ApplicationRecord
-  attribute :value, :string
-  attribute :position, :integer
+module Med
+  module Model::SymptomDiagnose
+    extend ActiveSupport::Concern
 
-  belongs_to :diagnose
-  belongs_to :symptom
+    included do
+      attribute :value, :string
+      attribute :position, :integer
 
-  acts_as_list
+      belongs_to :diagnose
+      belongs_to :symptom
+
+      acts_as_list
+    end
+
+  end
 end
