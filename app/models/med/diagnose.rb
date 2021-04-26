@@ -1,17 +1,6 @@
-class Diagnose < ApplicationRecord
-  include Detail::Ext::Knowable
-  attribute :type, :string
-  attribute :name, :string
-  attribute :actor, :string
-
-  has_many :symptoms, dependent: :nullify
-
-  enum actor: {
-    oneself: 'oneself',
-    doctor: 'doctor',
-    subjective: 'subjective',
-    objective: 'objective'
-  }
-
-
+module Med
+  class Diagnose < ApplicationRecord
+    include Model::Diagnose
+    include Detail::Ext::Knowable
+  end
 end

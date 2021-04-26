@@ -1,3 +1,5 @@
-class Med::Admin::BaseController < AdminController
+module Med
+  class Admin::BaseController < AdminController
 
-end unless defined? Med::Admin::BaseController
+  end
+end

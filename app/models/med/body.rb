@@ -1,9 +1,6 @@
-class Body < ApplicationRecord
-  include Com::Ext::Taxon
-
-  attribute :name, :string
-
-  has_one_attached :image
-  has_many_attached :images
-
+module Med
+  class Body < ApplicationRecord
+    include Model::Body
+    include Com::Ext::Taxon
+  end
 end
