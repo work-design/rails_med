@@ -1,3 +1,0 @@
-class PathogenCause < Cause
-
-end

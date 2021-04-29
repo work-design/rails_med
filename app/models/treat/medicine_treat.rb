@@ -1,3 +1,0 @@
-class MedicineTreat < Treat
-
-end

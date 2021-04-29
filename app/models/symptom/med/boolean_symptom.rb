@@ -1,7 +1,7 @@
 # 有或者无的症状，阴性、阳性
-class BooleanSymptom < Symptom
-
-
+module Med
+  class BooleanSymptom < Symptom
+  end
 end
 
 =begin

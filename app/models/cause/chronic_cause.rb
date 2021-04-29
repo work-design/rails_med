@@ -1,3 +1,0 @@
-class ChronicCause < Cause
-
-end

@@ -1,3 +1,0 @@
-class SportTreat < Treat
-
-end
