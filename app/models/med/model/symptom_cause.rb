@@ -1,6 +1,11 @@
-class SymptomCause < ApplicationRecord
+module Med
+  module Model::SymptomCause
+    extend ActiveSupport::Concern
 
-  belongs_to :symptom
-  belongs_to :cause
+    included do
+      belongs_to :symptom
+      belongs_to :cause
+    end
 
+  end
 end

@@ -1,7 +1,7 @@
 # 用户体征、症状等记录
 # 体征：体重、身高、血压
 module Med
-  module ProfileSymptom
+  module Model::ProfileSymptom
     extend ActiveSupport::Concern
 
     included do

@@ -1,5 +1,4 @@
 # 系统用到的单位
-
 module Med
   module Model::Unit
     extend ActiveSupport::Concern
