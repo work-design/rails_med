@@ -11,14 +11,14 @@
     <% end %>
     </div>
     <%= link_to bodies_panel_symptom_path(symptom), aria: { label: t('.bodies') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-child"></i>
+      <i class="fa-light fa-child"></i>
     <% end unless symptom.whole? %>
   </td>
   <td>
     <% if symptom.diagnose %>
       <span><%= symptom.diagnose.name %></span>
       <%= link_to panel_symptom_diagnoses_path(symptom), aria: { label: t('med.panel.symptom_diagnoses.index.title') } do %>
-        <i class="fas fa-microscope"></i>
+        <i class="fa-light fa-microscope"></i>
       <% end %>
     <% end %>
   </td>
@@ -29,7 +29,7 @@
       <% end %>
     </div>
     <%= link_to causes_panel_symptom_path(symptom), aria: { label: t('.causes') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-viruses"></i>
+      <i class="fa-light fa-viruses"></i>
     <% end %>
   </td>
   <td>
@@ -51,16 +51,16 @@
   <td><%= symptom.sequence %></td>
   <td>
     <%= link_to knowable_my_knowledges_path('Symptom', symptom), aria: { label: '知识' }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-book-medical"></i>
+      <i class="fa-light fa-book-medical"></i>
     <% end %>
     <%= link_to panel_symptom_path(symptom), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-eye"></i>
+      <i class="fa-light fa-circle-info"></i>
     <% end %>
     <%= link_to edit_panel_symptom_path(symptom), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-pencil-alt"></i>
+      <i class="fa-light fa-pencil"></i>
     <% end %>
     <%= link_to panel_symptom_path(symptom), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-trash-alt"></i>
+      <i class="fa-light fa-trash"></i>
     <% end %>
   </td>
 </tr>

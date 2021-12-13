@@ -7,7 +7,7 @@
       <th><%= Disease.human_attribute_name(:symptoms) %></th>
       <th>
         <%= link_to new_panel_disease_path, remote: true, class: 'button is-link is-small' do %>
-          <i class="fas fa-plus"></i><%= t('.new') %>
+          <i class="fa-light fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
     </tr>
@@ -25,16 +25,16 @@
       </td>
       <td>
         <%= link_to knowable_my_knowledges_path('Disease', disease), aria: { label: '知识' }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-book-medical"></i>
+          <i class="fa-light fa-book-medical"></i>
         <% end %>
         <%= link_to panel_disease_path(disease), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-eye"></i>
+          <i class="fa-light fa-circle-info"></i>
         <% end %>
         <%= link_to edit_panel_disease_path(disease), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-pencil-alt"></i>
+          <i class="fa-light fa-pencil"></i>
         <% end %>
         <%= link_to panel_disease_path(disease), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-trash-alt"></i>
+          <i class="fa-light fa-trash"></i>
         <% end %>
       </td>
     </tr>
