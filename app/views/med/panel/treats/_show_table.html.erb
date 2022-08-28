@@ -1,20 +1,8 @@
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>
-        <%= link_to t('.edit'), edit_panel_treat_path(@treat), class: 'button is-small is-link', remote: true %>
-      </th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= Treat.human_attribute_name(:name) %></td>
-      <td><%= @treat.name %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Treat.human_attribute_name(:type) %></td>
-      <td><%= @treat.type %></td>
-    </tr>
-  </tbody>
-</table>
+<tr>
+  <td class="has-text-right"><%= Med::Treat.human_attribute_name(:name) %></td>
+  <td><%= @treat.name %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Med::Treat.human_attribute_name(:type) %></td>
+  <td><%= @treat.type_i18n %></td>
+</tr>

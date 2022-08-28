@@ -1,3 +1,2 @@
-<%= render 'shared/error_messages', target: @cause %>
 <%= f.text_field :name %>
-<%= f.select :type, options_for_select(Cause.options_i18n(:type), @cause.type) %>
+<%= f.select :type, options_for_select(Med::Cause.options_i18n(:type), @cause.type) %>
