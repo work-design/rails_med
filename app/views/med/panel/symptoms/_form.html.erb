@@ -1,8 +1,7 @@
-<%= render 'shared/error_messages', target: @symptom %>
 <%= f.text_field :name %>
-<%= f.select :type, options_for_select(Symptom.options_i18n(:type), @symptom.type) %>
-<%= f.select :bodily, options_for_select(Symptom.options_i18n(:bodily), @symptom.bodily) %>
-<%= f.collection_select :diagnose_id, Diagnose.all, :id, :name, include_blank: true %>
+<%= f.select :type, options_for_select(Med::Symptom.options_i18n(:type), @symptom.type) %>
+<%= f.select :bodily, options_for_select(Med::Symptom.options_i18n(:bodily), @symptom.bodily) %>
+<%= f.collection_select :diagnose_id, Med::Diagnose.all, :id, :name, include_blank: true %>
 <%= f.check_box :mutable %>
 <%= f.check_box :primary %>
 <%= f.check_box :physical %>
