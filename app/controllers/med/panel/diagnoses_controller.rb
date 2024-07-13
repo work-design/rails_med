@@ -1,44 +1,19 @@
 module Med
   class Panel::DiagnosesController < Panel::BaseController
-    before_action :set_diagnose, only: [:show, :edit, :update, :destroy]
+    before_action :set_diagnose, only: [:show, :edit, :update, :destroy, :actions]
+    before_action :set_new_diagnose, only: [:new, :create]
 
     def index
       @diagnoses = Diagnose.page(params[:page])
     end
 
-    def new
-      @diagnose = Diagnose.new
-    end
-
-    def create
-      @diagnose = Diagnose.new(diagnose_params)
-
-      unless @diagnose.save
-        render :new, locals: { model: @diagnose }, status: :unprocessable_entity
-      end
-    end
-
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @diagnose.assign_attributes(diagnose_params)
-
-      unless @diagnose.save
-        render :edit, locals: { model: @diagnose }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @diagnose.destroy
-    end
-
     private
     def set_diagnose
       @diagnose = Diagnose.find(params[:id])
+    end
+
+    def set_new_diagnose
+      @diagnose = Diagnose.new(diagnose_params)
     end
 
     def diagnose_params

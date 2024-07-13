@@ -1,16 +1,5 @@
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th class="six wide">
-        <%= link_to t('.edit'), edit_panel_symptom_diagnose_path(@symptom_diagnose), class: 'ui mini blue right floated button', remote: true %>
-      </th>
-      <th class="ten wide"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= SymptomDiagnose.human_attribute_name(:value) %></td>
-      <td><%= @symptom_diagnose.value %></td>
-    </tr>
-  </tbody>
-</table>
+
+<tr>
+  <td class="has-text-right"><%= SymptomDiagnose.human_attribute_name(:value) %></td>
+  <td><%= @symptom_diagnose.value %></td>
+</tr>

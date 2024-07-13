@@ -2,6 +2,9 @@ zh:
   med:
     panel:
       title: 医学管理
+      home:
+        index:
+          title: 医学管理
       bodies:
         index:
           title: 身体部位

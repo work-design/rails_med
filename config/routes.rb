@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :diseases
 
     namespace :panel, defaults: { namespace: 'panel' } do
+      root 'home#index'
       resources :symptoms do
         member do
           get :bodies

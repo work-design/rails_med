@@ -1,20 +1,8 @@
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>
-        <%= link_to t('.edit'), edit_panel_disease_path(@disease), class: 'button is-small is-link', remote: true %>
-      </th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= Disease.human_attribute_name(:name) %></td>
-      <td><%= @disease.name %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Disease.human_attribute_name(:symptoms) %></td>
-      <td><%= @disease.symptoms %></td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <dt><%= Med::Disease.human_attribute_name(:name) %></dt>
+  <dd><%= @disease.name %></dd>
+</div>
+<div>
+  <dt><%= Med::Disease.human_attribute_name(:symptoms) %></dt>
+  <dd><%= @disease.symptoms %></dd>
+</div>

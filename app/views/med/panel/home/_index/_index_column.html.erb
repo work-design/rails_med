@@ -1,0 +1,22 @@
+<div class="fixed-grid has-6-cols">
+  <div class="grid">
+    <%= link_to({ controller: 'symptoms' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.symptoms.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'diagnoses' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.diagnoses.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'bodies' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.bodies.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'causes' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.causes.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'treats' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.treats.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'diseases' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('.diseases.index.title') %></span>
+    <% end %>
+  </div>
+</div>

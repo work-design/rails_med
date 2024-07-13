@@ -1,9 +1,13 @@
-<div class="<%= active_helper(modules: 'med/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
-  <a class="menu-label" data-action="menu#toggle">
-    <i class="fa-solid fa-fw fa-lungs"></i>
-    <span><%= t('med.panel.title') %></span>
-    <i class="fa-solid dropdown"></i>
-  </a>
+<div data-controller="menu" class="menu ex-accordion is-active">
+  <div class="menu-label">
+    <div>
+      <i class="fa-solid fa-fw fa-lungs"></i>
+      <span><%= t('med.panel.title') %></span>
+    </div>
+    <%= link_to({ controller: 'med/panel/home' }, aria: { label: '设置' }) do %>
+      <i class="fa-solid fa-cog"></i>
+    <% end %>
+  </div>
   <div class="menu-list">
     <%= link_to t('med.panel.symptoms.index.title'), { controller: 'med/panel/symptoms' }, class: active_helper(controllers: 'symptoms', active: 'is-active') %>
     <%= link_to t('med.panel.diagnoses.index.title'), { controller: 'med/panel/diagnoses' }, class: active_helper(controllers: 'diagnoses', active: 'is-active') %>
