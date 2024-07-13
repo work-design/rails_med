@@ -14,15 +14,15 @@ zh:
           objective: 客观/仪器
       med/cause:
         type:
-          HurtCause: 受伤
-          PathogenCause: 病原体
-          ChronicCause: 慢性积累
+          Med::HurtCause: 受伤
+          Med::PathogenCause: 病原体
+          Med::ChronicCause: 慢性积累
       med/symptom:
         type:
-          BooleanSymptom: 阴性/阳性
-          MeasureSymptom: 可测量
-          OptionSymptom: 选项
-          TimeSymptom: 持续时间
+          Med::BooleanSymptom: 阴性/阳性
+          Med::MeasureSymptom: 可测量
+          Med::OptionSymptom: 选项
+          Med::TimeSymptom: 持续时间
         bodily:
           whole: 全身性
           special: 特定部位
@@ -32,6 +32,6 @@ zh:
           false: 病理性的
       med/treat:
         type:
-          FoodTreat: 食疗
-          MedicineTreat: 药物治疗
-          SportTreat: 运动疗法
+          Med::FoodTreat: 食疗
+          Med::MedicineTreat: 药物治疗
+          Med::SportTreat: 运动疗法

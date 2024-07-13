@@ -1,8 +1,8 @@
-<tr>
-  <td class="has-text-right"><%= Cause.human_attribute_name(:name) %></td>
-  <td><%= @cause.name %></td>
-</tr>
-<tr>
-  <td class="has-text-right"><%= Cause.human_attribute_name(:type) %></td>
-  <td><%= @cause.type %></td>
-</tr>
+<div>
+  <dt><%= Med::Cause.human_atdivibute_name(:name) %></dt>
+  <dd><%= @cause.name %></dd>
+</div>
+<div>
+  <dt><%= Med::Cause.human_atdivibute_name(:type) %></dt>
+  <dd><%= @cause.type %></dd>
+</div>
