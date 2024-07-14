@@ -1,12 +1,22 @@
-<%= link_to knowable_my_knowledges_path('Diagnose', diagnose), aria: { label: '知识' }, remote: true, class: 'button is-small is-rounded is-light' do %>
-  <i class="fa-light fa-book-medical"></i>
-<% end %>
-<%= link_to panel_diagnose_path(diagnose), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-  <i class="fa-light fa-circle-info"></i>
-<% end %>
-<%= link_to edit_panel_diagnose_path(diagnose), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-  <i class="fa-light fa-pencil"></i>
-<% end %>
-<%= link_to panel_diagnose_path(diagnose), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-  <i class="fa-light fa-trash"></i>
-<% end %>
+<tr id="tr_<%= model.id %>" data-controller="show" data-action="mouseenter->show#show mouseleave->show#hide">
+  <%= yield %>
+  <td>
+    <div data-show-target="item" class="visibility-hidden">
+      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-circle-info color-info"></i>
+      <% end %>
+      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-pencil color-link"></i>
+      <% end %>
+      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+        <i class="fa-solid fa-trash color-danger"></i>
+      <% end %>
+    </div>
+    <div>
+      <%= button_to({ controller: 'detail/my/knowledges', action: 'new_knowable', knowable_type: model.base_class_name, knowable_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-book-medical"></i>
+        <span class="ml-1"><%= '知识' %></span>
+    <% end %>
+    </div>
+  </td>
+</tr>
