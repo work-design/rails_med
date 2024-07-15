@@ -1,6 +1,2 @@
-<%= form_with model: [:panel, @treat] do |f| %>
-  <%= render 'shared/error_messages', target: @treat %>
-  <%= f.text_field :name %>
-  <%= f.select :type, options_for_select(Treat.options_i18n(:type), @treat.type) %>
-  <%= f.submit %>
-<% end %>
+<%= f.text_field :name %>
+<%= f.select :type, options_for_select(Med::Treat.options_i18n(:type), @treat.type) %>

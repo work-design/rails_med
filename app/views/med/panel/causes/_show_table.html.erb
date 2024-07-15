@@ -1,8 +1,8 @@
 <div>
-  <dt><%= Med::Cause.human_atdivibute_name(:name) %></dt>
+  <dt><%= Med::Cause.human_attribute_name(:name) %></dt>
   <dd><%= @cause.name %></dd>
 </div>
 <div>
-  <dt><%= Med::Cause.human_atdivibute_name(:type) %></dt>
-  <dd><%= @cause.type %></dd>
+  <dt><%= Med::Cause.human_attribute_name(:type) %></dt>
+  <dd><%= @cause.type_i18n %></dd>
 </div>

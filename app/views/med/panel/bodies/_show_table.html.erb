@@ -1,12 +1,12 @@
 <tr>
-  <td class="has-text-right"><%= Body.human_attribute_name(:name) %></td>
+  <td class="has-text-right"><%= Med::Body.human_attribute_name(:name) %></td>
   <td><%= @body.name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Body.human_attribute_name(:image) %></td>
-  <td><%= @body.image %></td>
+  <td class="has-text-right"><%= Med::Body.human_attribute_name(:image) %></td>
+  <td><%= image_tag @body.image if @body.image.attached? %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Body.human_attribute_name(:images) %></td>
+  <td class="has-text-right"><%= Med::Body.human_attribute_name(:images) %></td>
   <td><%= @body.images %></td>
 </tr>
