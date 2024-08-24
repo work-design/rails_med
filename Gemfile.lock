@@ -243,6 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   rails
+  rails_com
   rails_med!
 
 BUNDLED WITH
